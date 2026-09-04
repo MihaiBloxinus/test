@@ -15,6 +15,15 @@ source.dir = .
 # (str) Application version
 version = 0.1
 
+# (str) Android target API, should be as high as possible.
+android.api = 33
+
+# (str) Minimum API your APK will support.
+android.minapi = 21
+
+# (bool) Indicate if the application should accept Android SDK license agreement
+android.accept_sdk_license = True
+
 # (list) Source files to include (let it include python files)
 source.include_exts = py,png,jpg,kv,atlas
 

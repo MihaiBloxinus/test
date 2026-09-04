@@ -1,0 +1,24 @@
+name: Construieste APK
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Construieste APK cu Buildozer
+      uses: kivy/buildozer-action@v1
+      id: buildozer
+      with:
+        filename: buildozer.spec
+
+    - name: Salveaza APK-ul ca fisier descarcabil
+      uses: actions/upload-artifact@v3
+      with:
+        name: pachet-apk
+        path: ${{ steps.buildozer.outputs.filename }}
